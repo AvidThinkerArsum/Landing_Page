@@ -8690,8 +8690,10 @@ input, select, textarea {
 .actions.stacked {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    margin-top: 20px; /* Adjust spacing from paragraph */
+    margin-top: 20px; /* Adjust spacing */
+    text-align: center;
 }
 
 .content h4 {
@@ -8699,23 +8701,26 @@ input, select, textarea {
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 20px;
-	text-align: center; /* Ensures all content is centered */
+	text-align: left; /* Ensures left alignment */
 }
 
+
+
 .content p {
-    font-size: 16px;
+	font-size: 16px;
     line-height: 1.5;
-    max-width: 500px; /* Prevents text from stretching too wide */
-    margin: 0 auto;
-	justify-content: center;
+    max-width: 500px; /* Keeps text from stretching too wide */
+    margin: 0 auto; /* Centers the text */
+    text-align: center; /* Ensures text is centered */
+    display: block;
 }
 
 .description-tags {
     display: flex;
     justify-content: center;
     gap: 16px; /* Increase space between words */
-    margin-top: 22px; /* Adds space below your name */
-    margin-bottom: 40px; /* Adds space above the paragraph */
+    margin-top: 30px; /* Adds space below your name */
+    margin-bottom: 45px; /* Adds space above the paragraph */
     flex-wrap: wrap;
 	max-width: 600px; /* Adjust width to match your name */
     margin-left: auto;
