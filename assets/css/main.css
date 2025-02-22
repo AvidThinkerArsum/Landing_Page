@@ -2659,7 +2659,7 @@ input, select, textarea {
 	 width: 100%;
 	 object-fit: cover;
 
-	 opacity: .7;
+	 opacity: 0.9;
 
 	 /* position: absolute;
 	 width: 100
@@ -6863,7 +6863,7 @@ input, select, textarea {
 			}
 
 			.gallery.style2 > .forward:before, .gallery.style2 > .backward:before {
-				display: block;
+				display: square;
 				top: calc(50% - 1.5rem);
 				width: 4rem;
 				height: 3rem;
@@ -6916,6 +6916,8 @@ input, select, textarea {
 			flex-shrink: 0;
 			display: block;
 			position: relative;
+			height: auto; /* Change from any stretched value */
+    		max-height: 400px; /* Give it a reasonable max height */
 			overflow: hidden;
 			width: 22.5rem;
 			max-width: 75vw;
@@ -6923,14 +6925,17 @@ input, select, textarea {
 
 			.gallery.style2 article .image {
 				display: block;
-				width: 100%;
-				border-radius: 0;
+    			width: 100%;
+    			height: 100%;
+    			border-radius: 0;
+    			overflow: hidden; /* Ensures the image does not overflow */
 			}
 
 				.gallery.style2 article .image img {
 					display: block;
-					width: 100%;
-					border-radius: 0;
+    				width: 100%;
+    				height: 100%;
+    				object-fit: cover; /* Ensures the image fills the box while maintaining aspect ratio */
 				}
 
 			.gallery.style2 article .caption {
@@ -6956,10 +6961,14 @@ input, select, textarea {
 				-ms-transition: opacity 0.2s ease-in-out;
 				transition: opacity 0.2s ease-in-out;
 				position: absolute;
+				text-align: center; /* Centers text */
+				flex-direction: column;
+    			justify-content: center; /* Centers vertically */
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
+				max-height: 100%;
 				background-color: rgba(0, 0, 0, 0.5);
 				opacity: 0;
 				padding: 3rem;
@@ -6969,12 +6978,19 @@ input, select, textarea {
 
 				.gallery.style2 article .caption a {
 					pointer-events: auto;
+					display: inline-block;
+    				margin-top: 0.5rem; /* Small spacing between text and button */
 				}
 
 				.gallery.style2 article .caption h2, .gallery.style2 article .caption h3, .gallery.style2 article .caption h4, .gallery.style2 article .caption h5, .gallery.style2 article .caption h6 {
 					font-size: 1.25rem;
 					margin-bottom: 0.25rem;
 				}
+
+				.gallery.style2 article .caption h1 {
+					font-size: 1.8rem;		
+				}
+				
 
 				.gallery.style2 article .caption > * {
 					max-width: 100%;
@@ -6986,7 +7002,7 @@ input, select, textarea {
 				}
 
 			.gallery.style2 article:hover .caption {
-				opacity: 1;
+				opacity: 1.5;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -8737,3 +8753,7 @@ input, select, textarea {
     font-weight: 600; /* Make them slightly bolder */
     text-align: center;
 }
+
+
+
+
