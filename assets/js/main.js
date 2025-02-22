@@ -25,6 +25,28 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+
+			// Image rotation logic
+			let images = [
+    			"images/2025-NadeemChaudhary_Arsum.jpeg",
+    			"images/pic2.png" // Replace with your second image
+			];
+			let index = 0;
+			let imgElement = document.getElementById("rotatingImage");
+
+			setInterval(() => {
+				// Fade out
+				imgElement.style.opacity = "0";
+				
+				setTimeout(() => {
+					index = (index + 1) % images.length; // Toggle between images
+					imgElement.src = images[index];
+		
+					// Fade in
+					imgElement.style.opacity = "1";
+				}, 500); // Wait for fade out transition before changing image
+		
+			}, 7000); // Change every 7 seconds
 		});
 
 	// Browser fixes.
