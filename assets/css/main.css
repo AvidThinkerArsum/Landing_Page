@@ -8713,22 +8713,37 @@ input, select, textarea {
 }
 
 .content h4 {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 20px;
 	text-align: left; /* Ensures left alignment */
 }
 
+.content h2 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	text-align: center; /* Ensures left alignment */
+}
 
 
 .content p {
-	font-size: 16px;
+	font-size: 15px;
     line-height: 1.5;
     max-width: 500px; /* Keeps text from stretching too wide */
     margin: 0 auto; /* Centers the text */
     text-align: center; /* Ensures text is centered */
     display: block;
+}
+
+.content b {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	text-align: left; /* Ensures left alignment */
 }
 
 .description-tags {
@@ -8754,6 +8769,10 @@ input, select, textarea {
     text-align: center;
 }
 
+#rotatingImage {
+    transition: opacity 0.1s ease-in-out; /* Smooth transition */
+    opacity: 1;
+}
 
 
 
