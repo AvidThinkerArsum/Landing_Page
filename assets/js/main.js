@@ -24,30 +24,32 @@
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
-			}, 100);
-
-			// Image rotation logic
-			let images = [
-    			"images/2025-NadeemChaudhary_Arsum.jpeg",
-    			"images/pic2.png" // Replace with your second image
-			];
+			}, 500);
+		
+			let images = ["image1", "image2"]; // IDs of the images
 			let index = 0;
-			let imgElement = document.getElementById("rotatingImage");
-
+			const fadeDuration = 1000; // 1-second fade duration
+			const totalDuration = 7000; // 7 seconds total cycle
+		
 			setInterval(() => {
-				// Fade out
-				imgElement.style.opacity = "0";
-				
+				let currentImage = document.getElementById(images[index]);
+				let nextImage = document.getElementById(images[(index + 1) % images.length]);
+		
+				// Step 1: Start fading out current image
+				currentImage.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+				currentImage.classList.remove("active");
+		
+				// Step 2: Wait for fade to complete before fading in next image
 				setTimeout(() => {
-					index = (index + 1) % images.length; // Toggle between images
-					imgElement.src = images[index];
+					nextImage.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+					nextImage.classList.add("active");
+				}, fadeDuration); // Wait exactly 1 seconds before swapping
 		
-					// Fade in
-					imgElement.style.opacity = "1";
-				}, 500); // Wait for fade out transition before changing image
-		
-			}, 7000); // Change every 7 seconds
+				// Step 3: Update index for next cycle
+				index = (index + 1) % images.length;
+			}, totalDuration); // Full cycle every 7 seconds
 		});
+	
 
 	// Browser fixes.
 
